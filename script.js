@@ -4,9 +4,11 @@ $(document).ready(function(){
     const nom = $('.nom'). val();
     const message = $('.message') .val();
 
-    alert(nom + message );
+    $.post('send.php',{nom:nom,message:message},function(donnees){
+        $('.afficher') .text(donnees);
 
-
+    });
+    return false;
 
    });
 
